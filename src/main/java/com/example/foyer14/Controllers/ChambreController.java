@@ -2,7 +2,9 @@ package com.example.foyer14.Controllers;
 
 
 import com.example.foyer14.Entities.Chambre;
+import com.example.foyer14.Entities.ChambreDTO;
 import com.example.foyer14.Services.IChambreSerive;
+import com.example.foyer14.Services.Imapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,6 +16,7 @@ import java.util.List;
 public class ChambreController {
 
    private final IChambreSerive iChambreSerive;
+   private final Imapper imapper;
 
    @GetMapping("/getchambre/{idChambre}")
     public Chambre recupererChambre(@PathVariable long idChambre)
@@ -45,4 +48,10 @@ public class ChambreController {
    {
        return iChambreSerive.modifyChambre(chambre);
    }
+
+    @GetMapping("/getchambredto/{idChambre}")
+    public ChambreDTO recupererChambreDTO(@PathVariable long idChambre)
+    {
+        return imapper.getChambredto(idChambre);
+    }
 }

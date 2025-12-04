@@ -17,8 +17,8 @@ public class Chambre {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idchambre;
-    private Long numeroChambre;
+    long idchambre;
+    long numeroChambre;
     @Enumerated(EnumType.STRING)
     private TypeChambre typeC;
     //    @ToString.Exclude
