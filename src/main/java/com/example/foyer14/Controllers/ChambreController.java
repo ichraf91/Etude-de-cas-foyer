@@ -3,6 +3,9 @@ package com.example.foyer14.Controllers;
 
 import com.example.foyer14.Entities.Chambre;
 import com.example.foyer14.Entities.ChambreDTO;
+import com.example.foyer14.Entities.ChambredtoMapDtruct;
+import com.example.foyer14.Services.ChambreMapper;
+import com.example.foyer14.Services.ChambreMapperService;
 import com.example.foyer14.Services.IChambreSerive;
 import com.example.foyer14.Services.Imapper;
 import lombok.RequiredArgsConstructor;
@@ -17,8 +20,10 @@ public class ChambreController {
 
    private final IChambreSerive iChambreSerive;
    private final Imapper imapper;
+    private final ChambreMapperService chambreMapperService;
 
-   @GetMapping("/getchambre/{idChambre}")
+
+    @GetMapping("/getchambre/{idChambre}")
     public Chambre recupererChambre(@PathVariable long idChambre)
    {
        return iChambreSerive.retrieveChambre(idChambre);
@@ -53,5 +58,10 @@ public class ChambreController {
     public ChambreDTO recupererChambreDTO(@PathVariable long idChambre)
     {
         return imapper.getChambredto(idChambre);
+    }
+    @GetMapping("/getchambredtoMap/{idChambre}")
+    public ChambredtoMapDtruct recupererChambreMAPSTRUCT(@PathVariable long idChambre)
+    {
+        return chambreMapperService.getCham(idChambre);
     }
 }

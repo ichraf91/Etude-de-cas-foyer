@@ -9,6 +9,6 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class ChambreDTO {
-    private Long numeroChambre;
+public class ChambredtoMapDtruct {
+    private Long number;
 }

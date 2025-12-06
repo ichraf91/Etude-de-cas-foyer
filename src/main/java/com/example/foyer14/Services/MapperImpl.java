@@ -6,7 +6,8 @@ import com.example.foyer14.Repositories.ChambreRepo;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-@Service@RequiredArgsConstructor
+@Service
+@RequiredArgsConstructor
 public class MapperImpl implements Imapper{
     private final ChambreRepo chambrerepo;
     @Override
