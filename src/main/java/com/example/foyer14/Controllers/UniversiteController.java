@@ -19,4 +19,9 @@ public class UniversiteController {
        return iuniversite.affecterFoyerAUniversite(idUniv,idFoyer);
     }
 
+    @PutMapping("/desaffecterFoyerFromUniv/{idUniv}/{idFoyer}")
+    public void disassignFoyerToUniv(@PathVariable long idUniv,@PathVariable long idFoyer){
+         iuniversite.desaffecterFoyerAUniversite(idUniv,idFoyer);
+    }
+
 }

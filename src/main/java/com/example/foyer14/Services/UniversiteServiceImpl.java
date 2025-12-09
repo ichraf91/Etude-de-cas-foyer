@@ -21,4 +21,13 @@ public class UniversiteServiceImpl implements Iuniversite{
         universiteRepo.save(u);
         return u;
     }
+
+    @Override
+    public void desaffecterFoyerAUniversite(long idFoyer, long idUniversite) {
+        Foyer f = foyerRepo.findById(idFoyer).get();
+        Universite u = universiteRepo.findById(idUniversite).get();
+        u.setFoyer(null);
+        universiteRepo.save(u);
+
+    }
 }
