@@ -1,5 +1,6 @@
 package com.example.foyer14.Entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
@@ -31,5 +32,6 @@ public class Etudiant {
 
     //    @ToString.Exclude
     @ManyToMany(mappedBy = "etudiants")
+    @JsonIgnore
     Set<Reservation> reservations;
 }

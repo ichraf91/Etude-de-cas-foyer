@@ -22,7 +22,7 @@ public class ChambreController {
    private final Imapper imapper;
     private final ChambreMapperService chambreMapperService;
 
-
+//http:localhost:8080/foyer/swagger-ui/index.html
     @GetMapping("/getchambre/{idChambre}")
     public Chambre recupererChambre(@PathVariable long idChambre)
    {
