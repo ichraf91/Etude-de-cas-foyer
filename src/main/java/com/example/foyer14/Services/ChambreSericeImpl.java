@@ -2,6 +2,7 @@ package com.example.foyer14.Services;
 
 
 import com.example.foyer14.Entities.Chambre;
+import com.example.foyer14.Entities.TypeChambre;
 import com.example.foyer14.Repositories.ChambreRepo;
 import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
@@ -38,5 +39,15 @@ public class ChambreSericeImpl implements IChambreSerive{
     @Override
     public Chambre modifyChambre(Chambre chambre) {
         return chambreRepo.save(chambre);
+    }
+
+    @Override
+    public Chambre chercherParNumEtBloc(Long num, String nom) {
+        return chambreRepo.findChambreByNumeroChambreAndAndBloc_NomBloc(num,nom);
+    }
+
+    @Override
+    public List<Chambre> getChambresParBlocEtType(long idBloc, TypeChambre typeC) {
+        return chambreRepo.findChambreByBlocIdBlocAndAndTypeC(idBloc,typeC);
     }
 }

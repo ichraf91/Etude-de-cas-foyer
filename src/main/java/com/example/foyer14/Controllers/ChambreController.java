@@ -4,6 +4,7 @@ package com.example.foyer14.Controllers;
 import com.example.foyer14.Entities.Chambre;
 import com.example.foyer14.Entities.ChambreDTO;
 import com.example.foyer14.Entities.ChambredtoMapDtruct;
+import com.example.foyer14.Entities.TypeChambre;
 import com.example.foyer14.Services.ChambreMapper;
 import com.example.foyer14.Services.ChambreMapperService;
 import com.example.foyer14.Services.IChambreSerive;
@@ -63,5 +64,18 @@ public class ChambreController {
     public ChambredtoMapDtruct recupererChambreMAPSTRUCT(@PathVariable long idChambre)
     {
         return chambreMapperService.getCham(idChambre);
+    }
+    @GetMapping("/getChambreByNumAndBloc/{numChambre}/{nomBloc}")
+
+    public Chambre recupererChambreParNumEtBloc(@PathVariable Long numChambre,@PathVariable String nomBloc )
+    {
+        return iChambreSerive.chercherParNumEtBloc(numChambre,nomBloc);
+    }
+
+    @GetMapping("/getChambreByBlocEtType/{idBloc}/{typeC}")
+
+    public List <Chambre> recupererChambreBlocetTypes(@PathVariable Long idBloc,@PathVariable TypeChambre typeC )
+    {
+        return iChambreSerive.getChambresParBlocEtType(idBloc,typeC);
     }
 }

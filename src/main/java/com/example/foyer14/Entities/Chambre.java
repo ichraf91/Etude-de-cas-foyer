@@ -1,5 +1,6 @@
 package com.example.foyer14.Entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
@@ -23,6 +24,7 @@ public class Chambre {
     private TypeChambre typeC;
     //    @ToString.Exclude
     @ManyToOne
+    @JsonIgnore
     Bloc bloc;
 
     @OneToMany

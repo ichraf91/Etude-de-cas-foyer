@@ -1,6 +1,7 @@
 package com.example.foyer14.Services;
 
 import com.example.foyer14.Entities.Chambre;
+import com.example.foyer14.Entities.TypeChambre;
 
 import java.util.List;
 
@@ -10,5 +11,8 @@ public interface IChambreSerive {
     public Chambre addChambre(Chambre c);
     public void removeChambre(Long chambreId);
     public Chambre modifyChambre(Chambre chambre);
+    Chambre chercherParNumEtBloc(Long num, String nom);
 
+    public List<Chambre> getChambresParBlocEtType (long idBloc, TypeChambre
+            typeC);
 }
