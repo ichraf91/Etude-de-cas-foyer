@@ -2,6 +2,7 @@ package com.example.foyer14.Services;
 
 import com.example.foyer14.Entities.Chambre;
 import com.example.foyer14.Entities.TypeChambre;
+import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 
@@ -15,4 +16,6 @@ public interface IChambreSerive {
 
     public List<Chambre> getChambresParBlocEtType (long idBloc, TypeChambre
             typeC);
+    List<Chambre> findChambresByTypeJPQL(TypeChambre type);
+
 }

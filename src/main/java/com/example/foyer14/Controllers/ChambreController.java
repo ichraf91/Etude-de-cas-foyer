@@ -78,4 +78,10 @@ public class ChambreController {
     {
         return iChambreSerive.getChambresParBlocEtType(idBloc,typeC);
     }
+    @GetMapping("/getChambreByTypeJPQL/{typeC}")
+
+    public List <Chambre> recupererChambreParTypesJpql(@PathVariable TypeChambre typeC )
+    {
+        return iChambreSerive.findChambresByTypeJPQL(typeC);
+    }
 }

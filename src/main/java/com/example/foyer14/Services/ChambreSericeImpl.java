@@ -50,4 +50,9 @@ public class ChambreSericeImpl implements IChambreSerive{
     public List<Chambre> getChambresParBlocEtType(long idBloc, TypeChambre typeC) {
         return chambreRepo.findChambreByBlocIdBlocAndAndTypeC(idBloc,typeC);
     }
+
+    @Override
+    public List<Chambre> findChambresByTypeJPQL(TypeChambre type) {
+        return chambreRepo.findChambresByType(type);
+    }
 }

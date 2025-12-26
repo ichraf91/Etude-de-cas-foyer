@@ -6,4 +6,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface ReservationRepo extends JpaRepository<Reservation, Long> {
+    //Calculer le nombre de réservations pour un étudiant bien donné
+    //Calculer le nombre de réservations pour chaque étudiant, en regroupant les résultats
+    // par le CIN
 }
