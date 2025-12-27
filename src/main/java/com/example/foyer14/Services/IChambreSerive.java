@@ -17,5 +17,8 @@ public interface IChambreSerive {
     public List<Chambre> getChambresParBlocEtType (long idBloc, TypeChambre
             typeC);
     List<Chambre> findChambresByTypeJPQL(TypeChambre type);
+    //void listchambreparbloc();
+    public void pourcentageChambreParType() ;
 
-}
+
+    }
